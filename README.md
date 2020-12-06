@@ -10,7 +10,7 @@
 6. If you want to run example from IDE, install any IDE for Python (e.g. [PyCharm](https://www.jetbrains.com/pycharm/download/) )
 
 ### Run the tests
-1. Open in any editor file `ultrafastgrid_demo.py ` and set your ApiKey in string `.set_api_key('...')`
+1. Open in any editor file `python ultrafastgrid_hackathon.py` and set your ApiKey in string `.set_api_key('...')`
 2. Install requirements `pip install -r requirements.txt`
 3. Run tests by calling `python ultrafastgrid_hackathon.py` 
 

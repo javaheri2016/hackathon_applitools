@@ -3,7 +3,9 @@ from selenium.webdriver import Chrome
 
 import os
 
-# key_applitools = os.environ.get('APPLITOOLS_API_KEY')
+master_branch = "https://demo.applitools.com/tlcHackathonMasterV1.html"
+dev_branch = "https://demo.applitools.com/tlcHackathonDev.html"
+prod_branch = "https://demo.applitools.com/tlcHackathonMasterV2.html"
 
 from applitools.selenium import (
     logger,
@@ -28,13 +30,17 @@ def set_up(eyes):
     # Add mobile emulation devices in Portrait mode
     (
         eyes.configure.add_browser(1200, 800, BrowserType.CHROME)
+            .add_browser(1200, 800, BrowserType.FIREFOX)
+            .add_browser(1200, 800, BrowserType.EDGE_CHROMIUM)
+            .add_browser(1200, 800, BrowserType.SAFARI)
+            .add_device_emulation(DeviceName.iPhone_X)
     )
 
 
 def main_page_test(web_driver, eyes):
     try:
         # Navigate to the url we want to test
-        web_driver.get("https://demo.applitools.com/tlcHackathonMasterV1.html")
+        web_driver.get(prod_branch)
 
         # Call Open on eyes to initialize a test session
         eyes.open(
@@ -54,7 +60,7 @@ def main_page_test(web_driver, eyes):
 def filter_by_color_test(web_driver, eyes):
     try:
         # Navigate to the url we want to test
-        web_driver.get("https://demo.applitools.com/tlcHackathonMasterV1.html")
+        web_driver.get(prod_branch)
 
         # Call Open on eyes to initialize a test session
         eyes.open(
@@ -76,7 +82,7 @@ def filter_by_color_test(web_driver, eyes):
 def product_details_test(web_driver, eyes):
     try:
         # Navigate to the url we want to test
-        web_driver.get("https://demo.applitools.com/tlcHackathonMasterV1.html")
+        web_driver.get(prod_branch)
 
         # Call Open on eyes to initialize a test session
         eyes.open(
